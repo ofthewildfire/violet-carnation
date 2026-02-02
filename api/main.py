@@ -9,3 +9,4 @@ async def root():
 @app.get("/check")
 async def check():
     return {"content:": "I work, from Next.js too... how cool?"}
+
