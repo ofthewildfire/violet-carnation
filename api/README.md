@@ -1,4 +1,22 @@
-# Notes
+# Local setup
+
+Setup virtual sever:
+
+```bash
+python -m venv .venv
+```
+
+To run you need to activate virtual environment:
+
+- `.venv\Scripts\Activate.ps1` on Windows for Powershell
+- `source .venv/Scripts/activate` Windows Bash
+- `source .venv/bin/activate` Linux, MacOS
+
+Check if its active:
+
+```bash
+Get-Command python
+```
 
 Install dependencies from `requirements.txt` file:
 
@@ -12,12 +30,6 @@ pip install -r requirements.txt
 ## using uv
 uv pip install -r requirements.txt
 ```
-
-To run you need to activate virtual environment:
-
-- `.venv\Scripts\Activate.ps1` on Windows for Powershell
-- `source .venv/Scripts/activate` Windows Bash
-- `source .venv/bin/activate` Linux, MacOS
 
 Start Server:
 
