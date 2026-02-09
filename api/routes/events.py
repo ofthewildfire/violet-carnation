@@ -45,6 +45,6 @@ def update_event(event_id: int, conn=Depends(get_connection)):
     return {"message": 'Not implemented'}
 
 # Destroy event
-@router.delete("/{event_id}", response_model=None )
-def delete_event(conn=Depends(get_connection)):
+@router.delete("/{event_id}", response_model=None)
+def delete_event(event_id: int, conn=Depends(get_connection)):
     return {"message": 'Not implemented'}

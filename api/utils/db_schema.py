@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS events (
     description TEXT NOT NULL, 
     location TEXT NOT NULL, 
     time TEXT NOT NULL,
-    organization_id INTEGER NOT NULL
+    organization_id INTEGER NOT NULL,
+    FOREIGN KEY (organization_id) REFERENCES organizations(id)
 );
 """
 
