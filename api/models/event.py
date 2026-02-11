@@ -1,6 +1,6 @@
-
 from pydantic import BaseModel, PositiveInt
 from typing import Optional
+
 
 class EventIn(BaseModel):
     name: str
