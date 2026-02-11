@@ -101,6 +101,21 @@ def update_event(
     # return {"message": 'Not implemented'}
 
 # Destroy event
-@router.delete("/{event_id}", response_model=None)
+@router.delete("/{event_id}", status_code=204)
 def delete_event(event_id: int, conn=Depends(get_connection)):
-    return {"message": 'Not implemented'}
+    row = conn.execute(
+        """
+        SELECT id, name, description, location, time, organization_id
+        FROM events
+        WHERE id = ?
+        """,
+        (event_id,),
+    ).fetchone()
+    if row is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Event not found")
+
+    conn.execute(
+        "DELETE FROM events WHERE id = ?",
+        (event_id,),
+    )
+    conn.commit()
