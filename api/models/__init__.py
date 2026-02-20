@@ -1,3 +1,5 @@
-from .user import User, UserIn
+from .event import Event, EventIn, EventUpdate
+from .event_registration import EventRegistrationIn
+from .organization import Organization, OrganizationCreate, OrganizationUpdate
 from .role import Role, RoleAndUser, RoleCreate, RoleUpdate
-from .event import Event, EventIn
+from .user import User
